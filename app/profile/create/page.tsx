@@ -1,22 +1,14 @@
+import { createProfileAction } from "@/actions/action";
 import { SubmitButton } from "@/components/form/Buttons";
 import FormContainer from "@/components/form/FormContainer";
 import FormInput from "@/components/form/FormInput";
-import { ProfileFormState } from "@/utils/types";
+import { currentUser } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
-const createProfileAction = async (
-    prevState: ProfileFormState,
-    formData: FormData
-) => {
-    "use server";
-    // const firstName = formData.get("firstName") as string;
-    const all = Object.fromEntries(formData);
-    // Validate
-    // Insert to db
-    console.log("Jukkru!!", all);
-    return { message: "Create Profile Success!" };
-};
+const CreateProfile = async () => {
+    const user = await currentUser();
+    if (user?.privateMetadata.hasProfile) redirect("/");
 
-const CreateProfile = () => {
     return (
         <section>
             <h1 className="text-2xl font-semibold mb-8 capitalize">new user</h1>

@@ -1,4 +1,4 @@
-import { AlignLeft } from "lucide-react";
+import { AlignLeft, UserIcon } from "lucide-react";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -8,11 +8,10 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "../ui/button";
-import UserIcon from "./UserIcon";
 import Link from "next/link";
 import { links } from "@/utils/links";
-import SignOutLinks from "./SignOutLinks";
 import { SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs";
+import SignOutLinks from "../navbar/SignOutLinks";
 
 const DropdownListMenu = () => {
     return (

@@ -16,13 +16,13 @@ const FormContainer = ({
 }) => {
     const { toast } = useToast();
     const [state, formAction] = useActionState(action, initialState);
+
     useEffect(() => {
         if (state.message) {
             toast({ description: state.message });
         }
     }, [state]);
 
-    console.log("state ja", state);
     return <form action={formAction}>{children}</form>;
 };
 export default FormContainer;

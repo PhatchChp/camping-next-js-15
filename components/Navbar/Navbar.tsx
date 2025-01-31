@@ -1,7 +1,7 @@
-import { DarkMode } from "./Darkmode";
-import DropdownListMenu from "./DropdownListMenu";
-import Logo from "./Logo";
-import Search from "./Search";
+import { DarkMode } from "../navbar/Darkmode";
+import DropdownListMenu from "../navbar/DropdownListMenu";
+import Logo from "../navbar/Logo";
+import Search from "../navbar/Search";
 
 function Navbar() {
     return (
